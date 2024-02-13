@@ -1,10 +1,13 @@
 #!/usr/bin/node
-exports.nbOccurences = function (list, searchElement) {
-  let nOccurrences = 0;
-  for (let a = 0; a < list.length; a++) {
-    if (searchElement === list[a]) {
-      nOccurrences++;
-    }
+exports.esrever = function (list) {
+  let le = list.length - 1;
+  let a = 0;
+  while ((le - a) > 0) {
+    const aux = list[le];
+    list[le] = list[a];
+    list[a] = aux;
+    a++;
+    le--;
   }
-  return nOccurrences;
+  return list;
 };
